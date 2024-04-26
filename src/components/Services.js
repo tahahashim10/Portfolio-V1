@@ -6,22 +6,22 @@ import {fadeIn} from '../variants';
 const services = [ 
   {
     name: 'UI/UX Design', 
-    descrition: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
     link: 'Learn more',
   }, 
   {
     name: 'Development', 
-    descrition: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
     link: 'Learn more',
   }, 
   {
     name: 'Digital Marketing', 
-    descrition: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
     link: 'Learn more',
   }, 
   {
     name: 'Product Branding', 
-    descrition: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam. Harum deleniti id sapiente.', 
     link: 'Learn more',
   },
 
@@ -34,15 +34,15 @@ const Services = () => {
     <section className='section' id='services'>
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row'>
-          <div className='flex-1 lg:bg-services lg:bg-bottom bg:no-repeat mx-blend-lighten mb-12 lg:mb-0'>
+          <motion.div variants={fadeIn('right', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.3}} className='flex-1 lg:bg-services lg:bg-bottom bg:no-repeat mx-blend-lighten mb-12 lg:mb-0'>
             <h2 className='h2 text-accent mb-6'>What I Do.</h2>
             <h3 className='h3 max-w-[455px] mb-16'>
               I'm a Computer Science student at the Univeristy of Toronto.
             </h3>
             <button className='btn btn-sm'>See my work</button>
-          </div>
+          </motion.div>
 
-          <div className='flex-1'>
+          <motion.div variants={fadeIn('left', 0.5)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.3}} className='flex-1'>
             <div>
               {services.map((service, index) => {
                 const {name, description, link} = service;
@@ -53,16 +53,16 @@ const Services = () => {
                       <p className='font-secondary leading-tight'>{description}</p>
                     </div>
                     <div className='flex flex-col flex-1 items-end'>
-                      <a href='#' className='btn w-9 h-9 mb-[42px]'>
+                      <a href='#' className='btn w-9 h-9 mb-[42px] flex justify-center items-center'>
                         <BsArrowUpRight />
                       </a>
-                      <a href='#'>{link}</a>
+                      <a href='#' className='text-gradient text-sm'>{link}</a>
                     </div>
                   </div>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
